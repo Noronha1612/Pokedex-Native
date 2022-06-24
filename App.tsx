@@ -2,6 +2,7 @@ import { useFonts, Poppins_400Regular, Poppins_700Bold } from '@expo-google-font
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { Loading } from './components/Loading';
+import { PokemonList } from './screens/PokemonList';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
+      <PokemonList />
     </View>
   );
 }

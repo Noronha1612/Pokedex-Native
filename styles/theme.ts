@@ -1,4 +1,4 @@
-export const theme = {
+export default {
     colors: {
         rock: '#B69E31',
         normal: '#AAA67F',

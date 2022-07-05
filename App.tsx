@@ -1,8 +1,10 @@
 import { useFonts, Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
 import { Loading } from './components/Loading';
 import { PokemonList } from './screens/PokemonList';
+import theme from './styles/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,18 +15,11 @@ export default function App() {
   if (!fontsLoaded) return <Loading />;
 
   return (
-    <View style={styles.container}>
+    <ThemeProvider theme={theme}>
       <StatusBar style='auto' />
-      <PokemonList />
-    </View>
+      <SafeAreaView>
+        <PokemonList />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

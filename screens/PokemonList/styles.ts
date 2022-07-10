@@ -2,8 +2,9 @@ import { Platform, StatusBar } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
     flex: 1;
+    flex-direction: column;
     background-color: ${({ theme }) => theme.colors.background};
     
     padding-top: ${Platform.OS === 'android' ? StatusBar.currentHeight : 0}px;
@@ -46,4 +47,9 @@ export const SearchInput = styled.TextInput`
     border-radius: 8px;
     border-color: ${({ theme }) => theme.colors.lightgray};
     border-width: 1px;
+`;
+
+export const Content = styled.View`
+    padding: ${RFValue(16)}px;
+    display: grid;
 `;

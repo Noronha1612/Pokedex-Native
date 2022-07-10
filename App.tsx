@@ -17,9 +17,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style='auto' />
-      <SafeAreaView>
-        <PokemonList />
-      </SafeAreaView>
+      <PokemonList />
     </ThemeProvider>
   );
 }

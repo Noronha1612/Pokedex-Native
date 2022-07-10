@@ -1,7 +1,9 @@
 import { PokeballSVG } from "../../assets/icons/Pokeball";
 import { SortingArrow } from "../../components/SortingArrow";
+import { PokemonCard } from "./components/PokemonCard";
 import {
     Container,
+    Content,
     Header,
     HeaderRow,
     HeaderTitle,
@@ -23,6 +25,10 @@ export const PokemonList = () => {
 
                 <SearchInput placeholder="🔎  Procurar" />
             </Header>
+
+            <Content>
+                <PokemonCard />
+            </Content>
         </Container>
     );
 }

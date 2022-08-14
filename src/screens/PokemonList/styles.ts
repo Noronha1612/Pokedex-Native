@@ -51,5 +51,5 @@ export const SearchInput = styled.TextInput`
 
 export const Content = styled.View`
     padding: ${RFValue(16)}px;
-    display: grid;
+    flex: 1;
 `;

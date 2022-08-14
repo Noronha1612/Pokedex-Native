@@ -13,8 +13,8 @@ export const Container = styled.TouchableOpacity.attrs(() => ({
   border-color: ${({ theme, type }) => theme.colors[type]};
   background-color: ${({ theme, type }) => theme.colors[type]};
 
-  max-width: ${RFValue(104)}px;
-  height: ${RFValue(112)}px;
+  width: ${RFValue(96)}px;
+  height: ${RFValue(104)}px;
   justify-content: space-between;
 `;
 

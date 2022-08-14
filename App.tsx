@@ -1,10 +1,13 @@
 import { useFonts, Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components/native';
 import { Loading } from './components/Loading';
-import { PokemonList } from './screens/PokemonList';
-import theme from './styles/theme';
+import { PokemonProvider } from './src/hooks/usePokemon';
+import { PokemonList } from './src/screens/PokemonList';
+import theme from './src/styles/theme';
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,8 +19,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar style='auto' />
-      <PokemonList />
+      <QueryClientProvider client={queryClient}>
+        <PokemonProvider>
+          <StatusBar style='auto' />
+          <PokemonList />
+        </PokemonProvider>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }
